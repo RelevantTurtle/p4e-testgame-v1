@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What Matters Most?</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-live="polite">
+      <section class="screen hero-screen" data-screen="landing">
+        <p class="kicker">A Philosophy for Everybody thinking game</p>
+        <h1>What Matters Most?</h1>
+        <p class="intro">
+          Rank three values and see what your choices make you notice. This is
+          not a personality test. It is a thinking game: a snapshot, a prompt,
+          and an invitation to reflect.
+        </p>
+        <button class="primary-button" type="button" data-action="start">
+          Start
+        </button>
+      </section>
+
+      <section class="screen" data-screen="ranking" hidden>
+        <div class="screen-heading">
+          <p class="step-label">Step 1 of 3</p>
+          <h2>Rank the three values</h2>
+          <p>
+            Put them in order from most important to least important right now.
+            You can change your mind — that’s part of thinking.
+          </p>
+        </div>
+        <ol class="ranking-list" data-ranking-list></ol>
+        <button class="primary-button" type="button" data-action="to-justify">
+          Continue
+        </button>
+      </section>
+
+      <section class="screen" data-screen="justification" hidden>
+        <div class="screen-heading">
+          <p class="step-label">Step 2 of 3</p>
+          <h2>Why did you rank them this way?</h2>
+          <p>
+            Write a short explanation, a doubt, or the thought that tipped the
+            order for you.
+          </p>
+        </div>
+        <label class="text-area-label" for="justification">
+          Your reflection
+        </label>
+        <textarea
+          id="justification"
+          name="justification"
+          rows="7"
+          placeholder="I ranked them this way because..."
+          data-justification
+        ></textarea>
+        <div class="button-row">
+          <button class="secondary-button" type="button" data-action="back-ranking">
+            Back
+          </button>
+          <button class="primary-button" type="button" data-action="show-results">
+            See snapshot
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="results" hidden>
+        <div class="screen-heading">
+          <p class="step-label">Step 3 of 3</p>
+          <h2>Your snapshot</h2>
+        </div>
+
+        <section class="result-block" aria-labelledby="ranking-result-heading">
+          <h3 id="ranking-result-heading">Final ranking</h3>
+          <ol class="result-list" data-result-list></ol>
+        </section>
+
+        <section class="result-block" aria-labelledby="justification-result-heading">
+          <h3 id="justification-result-heading">Your reflection</h3>
+          <p class="reflection-output" data-reflection-output></p>
+        </section>
+
+        <p class="snapshot-note">
+          This result is a snapshot, not a label. It does not tell you who you
+          are. It shows how you ranked three values at one moment. Change your
+          mind — that’s part of thinking.
+        </p>
+
+        <div class="button-row">
+          <button class="secondary-button" type="button" data-action="back-justify">
+            Back
+          </button>
+          <button class="primary-button" type="button" data-action="restart">
+            Start again
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>A Philosophy for Everybody thinking game.</footer>
+
+    <script src="values.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
